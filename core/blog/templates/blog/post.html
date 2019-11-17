@@ -1,0 +1,36 @@
+{% extends 'blog/basic.html' %}
+
+
+
+{% block header %}
+<!-- Page Header -->
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-heading">
+                    <h1 style="text-transform: capitalize">{% block heading %}{{data.heading}}{% endblock %}</h1>
+                    <span class="meta">Posted by
+                        <a href="#">{{data.author}}</a>
+                        at {{data.published_date}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <a href="/media/{{data.thumbail}}/"><img width="98%" class="thumbail" src="/media/{{data.thumbail}}/" title="{{data.heading}}" alt="{{data.heading}}" /></a>
+                {{data.body | safe | linebreaks}}
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}
