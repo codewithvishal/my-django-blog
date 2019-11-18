@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from blog import views as blog_view
 
 admin.site.site_title = "Code Via Logic"
 admin.site.index_title = "Code Via Logic"
@@ -24,6 +25,10 @@ admin.site.site_header= "Code Via Logic"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include('blog.urls')),
+    # path('blog/', include('blog.urls')),
+    path('', blog_view.index),
+    path('about/', blog_view.about),
+    path('contact/', blog_view.contact),
+    path('<slug_id>/', blog_view.post)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
