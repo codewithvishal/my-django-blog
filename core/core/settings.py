@@ -132,7 +132,7 @@ MEDIA_URL = '/media/'
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
-        'LOCATION': '/home/vishalchopra/Desktop/mysite/caches/',
+        'LOCATION': '/home/vishalchopra/Desktop/mysite/core/caches/',
         'OPTIONS': {
             'MAX_ENTRIES': 1000
         }
