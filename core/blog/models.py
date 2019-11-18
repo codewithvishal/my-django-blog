@@ -23,6 +23,9 @@ class Entry(models.Model):
     category = models.CharField(max_length=50, default="sample")
     tags = models.CharField(max_length=60, default="sample, sample2")
     slug = models.SlugField(max_length = 250)
+    seo_description = models.TextField(max_length=250, default="sample SEO description")
+    seo_robot =  models.CharField(max_length=80, default="sample SEO robot")
     
     def __str__(self):
-        return self.heading
+        return self.heading    
+    

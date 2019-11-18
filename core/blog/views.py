@@ -14,7 +14,8 @@ def post(request, slug_id):
     data = Entry.objects.filter(slug=slug_id)[0]
     print(data)
     return render(request, "blog/post.html", {
-        "data": data
+        "data": data,
+        "seo_title": "vishal"
     })
 
 def about(request):

@@ -1,5 +1,22 @@
 {% extends 'blog/basic.html' %}
 
+{% block seo %}
+    <title>{{data.heading}}</title>
+    <meta name="title" content="{{data.heading}}">
+    <meta name="description" content="{{data.seo_description}}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.get_host }}/blog/post/{{ data.slug }}">
+    <meta property="og:title" content="{{data.heading}}">
+    <meta property="og:description" content="{{data.seo_description}}">
+    <meta property="og:image" content="{{ request.get_host }}/media/{{data.thumbail}}">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ request.get_host }}/blog/post/{{ data.slug }}">
+    <meta property="twitter:title" content="{{data.heading}}">
+    <meta property="twitter:description" content="{{data.seo_description}}">
+    <meta property="twitter:image" content="{{ request.get_host }}/media/{{data.thumbail}}">
+{% endblock %}
 
 
 {% block header %}
