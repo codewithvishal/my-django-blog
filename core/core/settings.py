@@ -25,7 +25,7 @@ SECRET_KEY = 'fjk&el6%7kwlca26*4lhc@%%lu-)t(2z#afhy6l+=x2uew6pj3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
@@ -128,3 +128,13 @@ STATICFILES_DIR = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/home/vishalchopra/Desktop/mysite/caches/',
+        'OPTIONS': {
+            'MAX_ENTRIES': 1000
+        }
+    }
+}
